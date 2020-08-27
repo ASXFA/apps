@@ -69,13 +69,28 @@
 				<div class="collapse navbar-collapse" id="navbarNavDropdown">
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item active">
-							<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+							<a class="nav-link" href="#">Beranda <span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Features</a>
+							<a class="nav-link" href="#">Tentang Kami</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Pricing</a>
+							<a class="nav-link" href="#">Layanan</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Produk</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Publikasi</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Zona Integritas</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">FAQ</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">LOGIN</a>
 						</li>
 					</ul>
 				</div>
@@ -176,30 +191,30 @@
 				<div class="row">
 					<div class="col-md-3 col-sm-6">
 						<div class="stats1-info">
-							<i class=" icon-camera"></i>
-							<p><span class="count count1">499</span></p>
-							<h2>Photos Taken</h2>
+							<i class=" icon-building"></i>
+							<p><span class="count count1">72</span></p>
+							<h2>Instansi Pusat</h2>
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-6">
 						<div class="stats1-info">
-							<i class="icon-lock"></i>
-							<p><span class="count count1">1123</span></p>
-							<h2>New Members</h2>
+							<i class=""></i>
+							<p><span class="count count1"></span></p>
+							<h2></h2>
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-6">
 						<div class="stats1-info">
-							<i class="icon-trophy"></i>
-							<p><span class="count count1">187</span></p>
-							<h2>Competitions</h2>
+							<i class=""></i>
+							<p><span class=""></span></p>
+							<h2></h2>
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-6">
 						<div class="stats1-info">
-							<i class="icon-telescope"></i>
-							<p><span class="count count1">923</span></p>
-							<h2>Job Openings</h2>
+							<i class=""></i>
+							<p><span class="count count1">222</span></p>
+							<h2>instatnsi daerah dan universitas</h2>
 						</div>
 					</div>
 				</div>
@@ -219,7 +234,7 @@
 		</div>
 	</div>
 
-	<div class="" id="6">
+	<div class="mb-5" id="6">
 		<div class="text-center space40 mt-5">
 			<h2 class="title uppercase">Tentang Balai Sertifikasi Elektronik</h2>
 		</div>
@@ -233,52 +248,64 @@
 	
 	<div class="clearfix"></div>
 
-	<div class="" id="6">
-		<div class="text-center space40 mt-5">
-			<h2 class="title uppercase">Client Testimonial</h2>
-		</div>
+	<div class="mt-5" id="6">
 		<div class="parallax-bg6 padding60">
 			<div class="container">
 				<div class="testimonial-box">
 					<div id="testimonial" class="owl-carousel">
 						<div class="quote-info">
-							<img src="<?= base_url() ?>assets/frontend/images/quote/1.jpg" class="img-responsive" alt="">
-							<p>Duis iaculis mauris dui tellus arcu rhoncus tellus non suscipit nisl tincidunt eget. Mauris in porta sapien. Pellentesque luctus urna volutpat, mollis dolor porttitor, rutrum sem. Aliquam vitae orci a libero iaculis sollicitudin. Sed ullamcorper lorem justo, ut elementum enim dapibus vel.</p>
-							<h2 class="white">David Billie</h2>
+							<h3 class="text-white text-capitalize">Layanan Sertifikasi Elektronik</h3>
+							<p class="text-white font-weight-light">Balai Sertifikasi Elektronik (BSRE) menyelenggarakan layanan sertifikasi elektronik untuk pengamanan informasi pada sistem-sistem elektronik pemerintahan.</p>
 						</div>
 						<div class="quote-info">
-							<img src="<?= base_url() ?>assets/frontend/images/quote/2.jpg" class="img-responsive" alt="">
-							<p>Duis iaculis mauris dui tellus arcu rhoncus tellus non suscipit nisl tincidunt eget. Mauris in porta sapien. Pellentesque luctus urna volutpat, mollis dolor porttitor, rutrum sem. Aliquam vitae orci a libero iaculis sollicitudin. Sed ullamcorper lorem justo, ut elementum enim dapibus vel.</p>
-							<h2 class="white">Katey Thane</h2>
+							<h3 class="text-white text-capitalize">Produk Sertifikasi Elektronik</h3>
+							<p class="text-white font-weight-light">Balai Sertifikasi Elektronik (BSRE) miliki beberapa produk sertifikat elektronik untuk pengamanan informasi pada sistem-sistem elektronik pemerintahan. </p>
 						</div>
-						<div class="quote-info">
-							<img src="<?= base_url() ?>assets/frontend/images/quote/3.jpg" class="img-responsive" alt="">
-							<p>Duis iaculis mauris dui tellus arcu rhoncus tellus non suscipit nisl tincidunt eget. Mauris in porta sapien. Pellentesque luctus urna volutpat, mollis dolor porttitor, rutrum sem. Aliquam vitae orci a libero iaculis sollicitudin. Sed ullamcorper lorem justo, ut elementum enim dapibus vel.</p>
-							<h2 class="white">Wally Buddy</h2>
-						</div>
-					</div>
-					
-					<div id="carousel_five" >
-						<div class="item client-logo">
-							<a href="<?= base_url() ?>assets/frontend/#"><img src="<?= base_url() ?>assets/frontend/images/clients/1.png" class="img-responsive" alt=""/></a>
-						</div>
-						<div class="item client-logo">
-							<a href="<?= base_url() ?>assets/frontend/#"><img src="<?= base_url() ?>assets/frontend/images/clients/2.png" class="img-responsive" alt=""/></a>
-						</div>
-						<div class="item client-logo">
-							<a href="<?= base_url() ?>assets/frontend/#"><img src="<?= base_url() ?>assets/frontend/images/clients/3.png" class="img-responsive" alt=""/></a>
-						</div>
-						<div class="item client-logo">
-							<a href="<?= base_url() ?>assets/frontend/#"><img src="<?= base_url() ?>assets/frontend/images/clients/4.png" class="img-responsive" alt=""/></a>
-						</div>
-						<div class="item client-logo">
-							<a href="<?= base_url() ?>assets/frontend/#"><img src="<?= base_url() ?>assets/frontend/images/clients/5.png" class="img-responsive" alt=""/></a>
-						</div>
-					
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
+
+	<div class="mb-5" id="6">
+		<div class="text-center space40 mt-5">
+			<h2 class="title uppercase">Tentang Balai Sertifikasi Elektronik</h2>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="card" style="height: 320px;">
+						<div class="card-body">
+							<h4 class="text-capitalize">Jenis Tanda Tangan Elektronik</h4>
+							<h6 class="text-primary text-capitalize">June 15, 2020</h6>
+							<p>Sebelum memulai tanda tangan elektronik, penandatangan harus sudah memiliki dulu sertifikat elektronik. sertifikat elektronik ini yang menjadi pena/pulpen tanda tangan elektroniknya. Lebih lanjut sertifikat elektronik…</p>
+							<h6 class="text-primary text-capitalize">Artikel, Knowledge</h6>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card" style="height: 320px;">
+						<div class="card-body">
+							<h4 class="text-capitalize">Membuat Tanda Tangan Menggunakan Adobe Acrobat</h4>
+							<h6 class="text-primary text-capitalize">June 15, 2020</h6>
+							<p>Jenis tanda tangan elektronik. Menurut PP No 71 Tahun 2019 Tentang Penyelenggaraan Sistem dan Transaksi Elektronik Pasal 60 ayat 2 ada 2 jenis tanda tangan…</p>
+							<h6 class="text-primary text-capitalize">Artikel, Knowledge</h6>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card" style="height: 320px;">
+						<div class="card-body">
+							<h4 class="text-capitalize">Tanda Tangan Elektronik</h4>
+							<h6 class="text-primary text-capitalize">June 15, 2020</h6>
+							<p>Pada era digital seperti sekarang ini, penerapan Tanda Tangan Elektronik (TTE) sangat penting dilakukan di setiap transaksi elektronik pada setiap instansi atau organiasasi. Seperti halnya…</p>
+							<h6 class="text-primary text-capitalize">Artikel, Knowledge</h6>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 	</div>
 
 		
@@ -286,7 +313,7 @@
 	<footer>
 		<div class="container">
 			<div class="row">
-			    <img src="<?= base_url() ?>assets/frontend/images/basic/logo-ico.png" class="img-responsive space20 mx-auto d-block" width="400" alt=""/>
+			    <img src="<?= base_url() ?>assets/frontend/images/basic/selogo1.png" class="img-responsive space20 mx-auto d-block" width="200" alt=""/>
 			</div>
 			<div class="row">
 				<div class="f-social mx-auto d-block">
