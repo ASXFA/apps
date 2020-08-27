@@ -2,8 +2,7 @@
 <aside class="menu-sidebar d-none d-lg-block">
     <div class="logo">
         <a href="<?= base_url('assets/backend/') ?>#">
-            <!-- <img src="<?= base_url('assets/backend/') ?>images/icon/logo.png" alt="Cool Admin" /> -->
-            LOGO
+            <img src="<?= base_url('assets/backend/') ?>images/icon/selogo.png" alt="e-CertiFAST" />
         </a>
     </div>
     <div class="menu-sidebar__content js-scrollbar1">

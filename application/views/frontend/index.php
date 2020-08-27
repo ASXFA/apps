@@ -90,7 +90,7 @@
 							<a class="nav-link" href="#">FAQ</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">LOGIN</a>
+							<a class="nav-link" href="<?= base_url('login') ?>">LOGIN</a>
 						</li>
 					</ul>
 				</div>
@@ -124,8 +124,8 @@
 			<span class="sr-only">Next</span>
 		</a>
 		<div class="carousel-caption d-none d-block">
-			<h5>Selamat datang di Balai Sertifikasi Elektronik</h5>
-			<p>Guna memastikan pertukaran informasi yang efisien dan aman, Badan Siber dan Sandi Negara melalui Balai Sertifikasi Elektronik menyelenggarakan layanan sertifikasi elektronik (Certification Authority) untuk instansi-instansi penyelenggara negara.</p>
+			<h5>Selamat datang di e-CertiFAST</h5>
+			<p>Guna memastikan pertukaran informasi yang efisien dan aman, Badan Siber dan Sandi Negara dengan e-CertiFAST-nya untuk instansi-instansi penyelenggara negara.</p>
 		</div>
 	</div>
 	<!-- INNER CONTENT -->
@@ -185,7 +185,7 @@
 			<div id="stats1" class="container">
 				<div class="welcome-content text-center">
 					<h3>Jumlah Pengguna Layanan
-						Balai Sertifikasi Elektronik</h3>
+						e-CertiFAST</h3>
 					<p class="lead">Transaksi Elektronik</p>
 				</div>
 				<div class="row">
@@ -236,7 +236,7 @@
 
 	<div class="mb-5" id="6">
 		<div class="text-center space40 mt-5">
-			<h2 class="title uppercase">Tentang Balai Sertifikasi Elektronik</h2>
+			<h2 class="title uppercase">Tentang e-CertiFAST</h2>
 		</div>
 		<div class="row">
 			<div class="col-md-8 offset-md-2">
@@ -255,11 +255,11 @@
 					<div id="testimonial" class="owl-carousel">
 						<div class="quote-info">
 							<h3 class="text-white text-capitalize">Layanan Sertifikasi Elektronik</h3>
-							<p class="text-white font-weight-light">Balai Sertifikasi Elektronik (BSRE) menyelenggarakan layanan sertifikasi elektronik untuk pengamanan informasi pada sistem-sistem elektronik pemerintahan.</p>
+							<p class="text-white font-weight-light">e-CertiFAST menyelenggarakan layanan sertifikasi elektronik untuk pengamanan informasi pada sistem-sistem elektronik pemerintahan.</p>
 						</div>
 						<div class="quote-info">
 							<h3 class="text-white text-capitalize">Produk Sertifikasi Elektronik</h3>
-							<p class="text-white font-weight-light">Balai Sertifikasi Elektronik (BSRE) miliki beberapa produk sertifikat elektronik untuk pengamanan informasi pada sistem-sistem elektronik pemerintahan. </p>
+							<p class="text-white font-weight-light">e-CertiFAST miliki beberapa produk sertifikat elektronik untuk pengamanan informasi pada sistem-sistem elektronik pemerintahan. </p>
 						</div>
 					</div>
 				</div>
@@ -269,7 +269,7 @@
 
 	<div class="mb-5" id="6">
 		<div class="text-center space40 mt-5">
-			<h2 class="title uppercase">Tentang Balai Sertifikasi Elektronik</h2>
+			<h2 class="title uppercase">Postingan Terbaru</h2>
 		</div>
 		<div class="container">
 			<div class="row">

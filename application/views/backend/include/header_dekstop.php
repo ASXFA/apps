@@ -119,7 +119,7 @@
                     <div class="account-wrap">
                         <div class="account-item clearfix js-item-menu">
                             <div class="image">
-                                <img src="<?= base_url('assets/backend/') ?>images/icon/avatar-01.jpg" alt="John Doe" />
+                                <img src="<?= base_url('assets/backend/') ?>images/icon/default-avatar.png" alt="User" />
                             </div>
                             <div class="content">
                                 <a class="js-acc-btn" href="<?= base_url('assets/backend/') ?>#"><?= $this->session->userdata('username') ?></a>
@@ -128,7 +128,7 @@
                                 <div class="info clearfix">
                                     <div class="image">
                                         <a href="<?= base_url('assets/backend/') ?>#">
-                                            <!-- <img src="<?= base_url('assets/backend/') ?>images/icon/avatar-01.jpg" alt="John Doe" /> -->
+                                            <img src="<?= base_url('assets/backend/') ?>images/icon/default-avatar.png" alt="User" />
                                         </a>
                                     </div>
                                     <div class="content">

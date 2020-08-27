@@ -28,7 +28,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="mx-auto d-block">
-                                        <img class="rounded-circle mx-auto d-block" src="<?= base_url() ?>assets/backend/images/icon/avatar-01.jpg" alt="Card image cap">
+                                        <img class="rounded-circle mx-auto d-block" width="30%" src="<?= base_url('assets/backend/') ?>images/icon/default-avatar.png" alt="User" />
                                         <hr>
                                         <h5 class="text-sm-center mt-2 mb-1">Users 1</h5>
                                         <div class="location text-sm-center">
