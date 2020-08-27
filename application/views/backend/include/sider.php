@@ -22,10 +22,10 @@
                         <i class="fas fa-pencil-square-o"></i>Penerbitan SE <span class="float-right"><i class="fa fa-chevron-down text-muted"></i></span></a>
                         <ul class="list-unstyled navbar__sub-list js-sub-list">
                             <li>
-                                <a href="<?= base_url('dokumen') ?>">Surat Rekomendasi SE</a>
+                                <a href="<?= base_url('surat_rekomendasi_SE') ?>">Surat Rekomendasi SE</a>
                             </li>
                             <li>
-                                <a href="<?= base_url('assets/backend/') ?>index2.html">Visualisasi TTE</a>
+                                <a href="<?= base_url('TTE') ?>">Visualisasi TTE</a>
                             </li>
                         </ul>
                 </li>

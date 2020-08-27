@@ -2,7 +2,7 @@
 <header class="header-desktop">
     <div class="section__content section__content--p30">
         <div class="container-fluid">
-            <div class="header-wrap">
+            <div class="header-wrap float-right">
                 <div class="header-button">
                     <div class="noti-wrap">
                         <div class="noti__item js-item-menu">
@@ -119,7 +119,7 @@
                     <div class="account-wrap">
                         <div class="account-item clearfix js-item-menu">
                             <div class="image">
-                                <!-- <img src="<?= base_url('assets/backend/') ?>images/icon/avatar-01.jpg" alt="John Doe" /> -->
+                                <img src="<?= base_url('assets/backend/') ?>images/icon/avatar-01.jpg" alt="John Doe" />
                             </div>
                             <div class="content">
                                 <a class="js-acc-btn" href="<?= base_url('assets/backend/') ?>#"><?= $this->session->userdata('username') ?></a>
@@ -140,7 +140,7 @@
                                 </div>
                                 <div class="account-dropdown__body">
                                     <div class="account-dropdown__item">
-                                        <a href="<?= base_url('assets/backend/') ?>#">
+                                        <a href="<?= base_url('users/profil') ?>">
                                             <i class="zmdi zmdi-account"></i>Profil</a>
                                     </div>
                                 </div>

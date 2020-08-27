@@ -19,4 +19,15 @@ class Users extends CI_Controller {
 		$this->load->view('backend/v_users');
 		$this->load->view('backend/include/footer');
 	}
+
+	// Profil akun login
+	public function profil()
+	{
+		$data['title'] = 'profil';
+        $this->load->view('backend/include/head');
+		$this->load->view('backend/include/header_mobile');
+		$this->load->view('backend/include/sider',$data);
+		$this->load->view('backend/v_profil');
+		$this->load->view('backend/include/footer');
+	}
 }

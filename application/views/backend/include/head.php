@@ -31,8 +31,8 @@
     <link href='<?= base_url('assets/backend/') ?>vendor/fullcalendar-3.10.0/fullcalendar.css' rel='stylesheet' media="all" />
 
     <!-- Main CSS-->
-    <link href="<?= base_url('assets/backend/') ?>css/theme.css" rel="stylesheet" media="all">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="<?= base_url('assets/backend/') ?>css/theme.css" rel="stylesheet" media="all">
     <style type="text/css">
         /* force class color to override the bootstrap base rule
         NOTE: adding 'url: #' to calendar makes this unneeded
@@ -41,6 +41,27 @@
             color: #fff !important;
             text-decoration: none;
         }
+        .tablePagination:before {
+            content:"Pages : ";
+            margin-right: 10px;
+        }
+        
+        .tablePagination li {
+            cursor: pointer;
+            display: inline-block;
+            list-style: none;
+            padding: 4px 15px;
+        }
+
+        .tablePagination li:hover {
+            background: #eee;
+        }
+
+        .tablePagination .current {
+            background: #26b;
+            color: #fff;
+        }
+        
     </style>
 </head>
 <body class="animsition">

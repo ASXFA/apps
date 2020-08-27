@@ -1323,7 +1323,7 @@ section {
     -moz-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    margin-left: 1020px;
+    
 }
 
 .noti-wrap .noti__item:last-child {
@@ -4351,7 +4351,7 @@ section {
 }
 
 .table-data {
-    height: 600px;
+    height: 700px !important;
     overflow-y: auto;
 }
 
@@ -14668,23 +14668,3 @@ section {
   padding-right: 20px;
 }
 
-.tablePagination:before {
-  content:"Pages : ";
-  margin-right: 10px;
-}
-
-.tablePagination li {
-  cursor: pointer;
-  display: inline-block;
-  list-style: none;
-  padding: 4px 15px;
-}
-
-.tablePagination li:hover {
-  background: #eee;
-}
-
-.tablePagination .current {
-  background: #26b;
-  color: #fff;
-}
