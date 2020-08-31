@@ -12,11 +12,11 @@ class Dashboard extends CI_Controller {
 
 	public function index()
 	{
-		$data['title'] = 'dashboard';
-		$this->load->view('backend/include/head');
+		$data['title'] = 'Admin Panel - dashboard';
+		$this->load->view('backend/include/head',$data);
 		$this->load->view('backend/include/header_mobile');
 		$this->load->view('backend/include/sider');
-		$this->load->view('backend/v_dashboard',$data);
+		$this->load->view('backend/v_dashboard');
 		$this->load->view('backend/include/footer');
 	}
 }

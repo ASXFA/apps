@@ -26,14 +26,15 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('backend/include/head');
+		$data['title'] = 'Login';
+		$this->load->view('backend/include/head',$data);
 		$this->load->view('backend/v_login');
 		$this->load->view('backend/include/footer');
 	}
 
 	function action_login()
 	{
-		$this->form_validation->set_rules('l_username','Username','required');
+		$this->form_validation->set_rules('l_nip','NIP','required');
 		$this->form_validation->set_rules('l_password','Password','required');
 
 		if($this->form_validation->run() != false ){
@@ -43,16 +44,22 @@ class Login extends CI_Controller {
 			$check = $this->users_model->check_users();
 			if ($check->num_rows() == 0) {
 				$this->session->set_flashdata('cond','0');
-				$this->session->set_flashdata('login_check','Username does not exist');
+				$this->session->set_flashdata('login_check','NIP does not exist');
 				redirect('login');
 			}else{
 				$user = $check->row();
 				// pengecekkan kevalidan password
-				if(password_verify($this->input->post('l_password'),$user->password)){
+				if(password_verify($this->input->post('l_password'),$user->user_password)){
 					$session = array(
 						'is_login' => 1,
-						'username' => $user->username,
-						'role' => $user->role
+						'user_id' => $user->user_id,
+						'user_nik' => $user->user_nik,
+						'user_nip' => $user->user_nip,
+						'user_nama' => $user->user_nama,
+						'user_email' => $user->user_email,
+						'user_jabatan' => $user->user_jabatan,
+						'user_unit_organisasi' => $user->user_unit_organisasi,
+						'role' => $user->user_role
 					);
 					$this->session->set_userdata($session);
 					$this->session->set_flashdata('cond','1');

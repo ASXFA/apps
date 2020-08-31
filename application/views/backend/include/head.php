@@ -9,7 +9,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Kondisi</title>
+    <title><?= ucfirst($title) ?></title>
 
     <!-- Fontfaces CSS-->
     <link href="<?= base_url('assets/backend/') ?>css/font-face.css" rel="stylesheet" media="all">

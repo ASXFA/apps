@@ -122,7 +122,7 @@
                                 <img src="<?= base_url('assets/backend/') ?>images/icon/default-avatar.png" alt="User" />
                             </div>
                             <div class="content">
-                                <a class="js-acc-btn" href="<?= base_url('assets/backend/') ?>#"><?= $this->session->userdata('username') ?></a>
+                                <a class="js-acc-btn" href="<?= base_url('assets/backend/') ?>#"><?= $this->session->userdata('user_nama') ?></a>
                             </div>
                             <div class="account-dropdown js-dropdown">
                                 <div class="info clearfix">
@@ -133,9 +133,9 @@
                                     </div>
                                     <div class="content">
                                         <h5 class="name">
-                                            <a href="<?= base_url('assets/backend/') ?>#"><?= $this->session->userdata('username') ?></a>
+                                            <a href="<?= base_url('assets/backend/') ?>#"><?= $this->session->userdata('user_nama') ?></a>
                                         </h5>
-                                        <span class="email">admin@example.com</span>
+                                        <span class="email"><?= $this->session->userdata('user_email') ?></span>
                                     </div>
                                 </div>
                                 <div class="account-dropdown__body">

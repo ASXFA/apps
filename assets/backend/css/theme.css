@@ -3969,6 +3969,16 @@ section {
     text-align: center;
 }
 
+.card .card-body .img-add{
+    margin-top: 65px;
+}
+
+.card .card-footer {
+    background-color: #fff;
+    border-top: 0px;
+    margin-top: 20px;
+}
+
 .map-data {
     border: 1px solid #e5e5e5;
     background: #fff;
@@ -4637,8 +4647,24 @@ section {
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
-    background: #e5e5e5;
     margin-right: 5px;
+}
+
+.table-data-feature .item.item-danger{
+    background: #e63946;
+}
+
+.table-data-feature .item.item-success{
+    background: #00a896;
+}
+
+.table-data-feature .item.item-info{
+    background: #00b4d8;
+}
+
+.table-data-feature .item.item-warning{
+    background: #f6ae2d;
+    color: #333;
 }
 
 .table-data-feature .item:last-child {
@@ -4647,7 +4673,7 @@ section {
 
 .table-data-feature .item i {
     font-size: 20px;
-    color: #808080;
+    color: #fff;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -4656,6 +4682,12 @@ section {
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+}
+
+select.form-control.form-control-sm.filter{
+    display: inline-flex;
+    width: 150px;
+    border-radius: 5px;
 }
 
 .block-email {
@@ -14668,3 +14700,46 @@ section {
   padding-right: 20px;
 }
 
+.modal .modal-content{
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.3);
+}
+.modal.fade {
+    animation: fadeIn 2s;
+    -moz-animation: fadeIn 2s; /* Firefox */
+    -webkit-animation: fadeIn 2s; /* Safari and Chrome */
+    -o-animation: fadeIn 2s; /* Opera */
+}
+@keyframes fadeIn {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadeIn { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadeIn { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadeIn { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
