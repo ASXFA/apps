@@ -29,6 +29,7 @@
     <link href="<?= base_url('assets/backend/') ?>vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="<?= base_url('assets/backend/') ?>vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
     <link href='<?= base_url('assets/backend/') ?>vendor/fullcalendar-3.10.0/fullcalendar.css' rel='stylesheet' media="all" />
+    <link href='<?= base_url('assets/backend/') ?>vendor/jquery-ui/jquery-ui.css' rel='stylesheet' media="all" />
 
     <!-- Main CSS-->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

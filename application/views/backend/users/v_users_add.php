@@ -51,13 +51,24 @@
                                                 <small class="text-danger"><?= form_error('user_email') ?></small>
                                             </div>
                                             <div class="form-group">
+                                                <label for="user_pangkat" class="form-control-label">Pangkat / Golongan</label>
+                                                <input type="text" name="user_pangkat" class="form-control" required>
+                                                <small class="text-danger"><?= form_error('user_pangkat') ?></small>
+                                            </div>
+                                            <div class="form-group">
                                                 <label for="user_jabatan" class="form-control-label">Jabatan <small> <span class="text-italic">( optional )</span></small></label>
                                                 <input type="text" name="user_jabatan" class="form-control">
+                                                <small class="text-danger"><?= form_error('user_jabatan') ?></small>
                                             </div>
                                             <div class="form-group">
                                                 <label for="user_unit_organisasi" class="form-control-label">Unit Organisasi</label>
                                                 <input type="text" name="user_unit_organisasi" class="form-control" required>
                                                 <small class="text-danger"><?= form_error('user_unit_organisasi') ?></small>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="user_unit_kerja" class="form-control-label">Unit Kerja</label>
+                                                <input type="text" name="user_unit_kerja" class="form-control" required>
+                                                <small class="text-danger"><?= form_error('user_unit_kerja') ?></small>
                                             </div>
                                             <div class="form-group">
                                                 <label for="user_organisasi" class="form-control-label">Organisasi</label>

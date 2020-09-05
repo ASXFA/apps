@@ -41,7 +41,9 @@ class Users extends CI_Controller {
 		$this->form_validation->set_rules('user_nik','NIK','required|max_length[16]');
 		$this->form_validation->set_rules('user_nip','NIP','required|max_length[18]');
 		$this->form_validation->set_rules('user_email','Email','required|valid_email');
+		$this->form_validation->set_rules('user_pangkat','Pangkat / Golongan','required');
 		$this->form_validation->set_rules('user_unit_organisasi','Unit Organisasi','required');
+		$this->form_validation->set_rules('user_unit_kerja','Unit Kerja','required');
 		$this->form_validation->set_rules('user_organisasi','Organisasi','required');
 		$this->form_validation->set_rules('user_kota','Kota','required');
 		$this->form_validation->set_rules('user_provinsi','Provinsi','required');
@@ -110,7 +112,9 @@ class Users extends CI_Controller {
 		$this->form_validation->set_rules('user_nik','NIK','required|max_length[16]');
 		$this->form_validation->set_rules('user_nip','NIP','required|max_length[18]');
 		$this->form_validation->set_rules('user_email','Email','required|valid_email');
+		$this->form_validation->set_rules('user_pangkat','Pangkat / Golongan','required');
 		$this->form_validation->set_rules('user_unit_organisasi','Unit Organisasi','required');
+		$this->form_validation->set_rules('user_unit_kerja','Unit Kerja','required');
 		$this->form_validation->set_rules('user_organisasi','Organisasi','required');
 		$this->form_validation->set_rules('user_kota','Kota','required');
 		$this->form_validation->set_rules('user_provinsi','Provinsi','required');
@@ -192,6 +196,21 @@ class Users extends CI_Controller {
 			redirect('users/listSoftDeleted');
 		}else{
 			redirect('users/listSoftDeleted');
+		}
+	}
+
+	public function search()
+	{
+		if (isset($_GET['term'])) {
+			$result = $this->users_model->search($_GET['term']);
+			if (count($result) > 0) {
+				foreach ($result as $row)
+					$arr_result[] = array(
+						'user_id' => $row->user_id,
+						'user_nama' => $row->user_nama
+					);
+					echo json_encode($arr_result);
+			}
 		}
 	}
 

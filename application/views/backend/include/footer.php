@@ -7,7 +7,13 @@
 </div>
 </div>
     <!-- Jquery JS-->
+    <?php
+        if ($title != "Admin Panel - surat rekomendasi") {
+    ?>
     <script src="<?= base_url('assets/backend/') ?>vendor/jquery-3.2.1.min.js"></script>
+    <?php
+        }
+    ?>
     <!-- Bootstrap JS-->
     <!-- <script src="<?= base_url('assets/backend/') ?>vendor/bootstrap-4.1/popper.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>

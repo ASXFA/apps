@@ -92,9 +92,9 @@
                                                 </td>
                                                 <td class="mx-auto d-block">
                                                     <div class="table-data-feature">
-                                                        <!-- <a href="<?= base_url('TTE/download/'.$t->tte_filename) ?>" class="item item-warning"  title="Unduh">
-                                                                <i class="zmdi zmdi-download"></i>
-                                                        </a> -->
+                                                        <a href="#" data-toggle="modal" data-target="#detailTTE<?= $t->tte_id ?>" class="item item-info"  title="Detail">
+                                                                <i class="zmdi zmdi-eye"></i>
+                                                        </a>
 
                                                         <a href="<?= base_url('TTE/delete/'.$encrypt_id) ?>" class="item item-danger" id="delete-tte<?= $no ?>" title="Delete">
                                                                 <i class="zmdi zmdi-delete"></i>
@@ -177,6 +177,25 @@
   </div>
 </div>
 <!-- end modal Tambah TTE -->
+
+<?php foreach($tteModal as $tte): ?>
+<!-- modal Tambah TTE -->
+<div class="modal fade" id="detailTTE<?= $tte->tte_id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-white" id="exampleModalLabel">Tanda Tangan Elektronik</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        <div class="modal-body">
+            <img src="<?= base_url('assets/backend/images/TTE/'.$this->session->userdata('user_id').'/'.$tte->tte_filename.'.png') ?>" alt="">
+        </div>
+  </div>
+</div>
+<!-- end modal Tambah TTE -->
+<?php endforeach ?>
 
 <script src="<?= base_url('assets/backend/') ?>vendor/jquery-3.2.1.min.js"></script>
 <script>

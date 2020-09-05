@@ -16,6 +16,7 @@ class TTE extends CI_Controller {
 	{
 		$data['title'] = 'TTE';
 		$data['tte'] = $this->TTE_model->getAll()->result();
+		$data['tteModal'] = $this->TTE_model->getAll()->result();
 		$data['countTte'] = $this->TTE_model->countTte();
 		$this->load->view('backend/include/head');
 		$this->load->view('backend/include/header_mobile');
@@ -62,12 +63,12 @@ class TTE extends CI_Controller {
 			imagecopy($image, $src, 10, 25, 0, 0, 125, 146);
 			$text =  'Ditandatangani secara elektronik oleh : ';
 			$text1 =  $this->session->userdata('user_unit_organisasi');
-			$text2 =  $this->session->userdata('user_nama');
-			$text3 =  $this->session->userdata('user_jabatan');
-			$font = dirname(__FILE__) .'\Poppins-Regular.ttf';//make sure chosen font is in the directory!!
+			$text2 =  strtoupper($this->session->userdata('user_nama'));
+			$text3 =  ucfirst($this->session->userdata('user_jabatan'));
+			$font = dirname(__FILE__) .'\arial.ttf';//make sure chosen font is in the directory!!
 			imagettftext($image, 13, 0, 165, 45, $black, $font, $text);//text
-			imagettftext($image, 13, 0, 165, 65, $black, $font, $text1);//text
-			imagettftext($image, 13, 0, 165, 145, $black, $font, $text2);//text
+			imagettftext($image, 14, 0, 165, 65, $black, $font, $text1);//text
+			imagettftext($image, 14, 0, 165, 145, $black, $font, $text2);//text
 			imagettftext($image, 13, 0, 165, 165, $black, $font, $text3);//text
 			$save = "assets/backend/images/TTE/".$this->session->userdata('user_id')."/".$filename_encrypt.".png";//image will be save in this files directory as ".png"
 			// header('Content-Type: image/png');
@@ -104,10 +105,10 @@ class TTE extends CI_Controller {
 			$text1 =  strtoupper($this->input->post('unit_organisasi'));
 			$text2 =  $this->session->userdata('user_nama');
 			$text3 =  $this->session->userdata('user_jabatan');
-			$font = dirname(__FILE__) .'\Poppins-Regular.ttf';//make sure chosen font is in the directory!!
+			$font = dirname(__FILE__) .'\arial.ttf';//make sure chosen font is in the directory!!
 			imagettftext($image, 13, 0, 165, 45, $black, $font, $text);//text
-			imagettftext($image, 13, 0, 165, 65, $black, $font, $text1);//text
-			imagettftext($image, 13, 0, 165, 145, $black, $font, $text2);//text
+			imagettftext($image, 14, 0, 165, 65, $black, $font, $text1);//text
+			imagettftext($image, 14, 0, 165, 145, $black, $font, $text2);//text
 			imagettftext($image, 13, 0, 165, 165, $black, $font, $text3);//text
 			$save = "assets/backend/images/TTE/".$this->session->userdata('user_id')."/".$filename_encrypt.".png";//image will be save in this files directory as ".png"
 			// header('Content-Type: image/png');

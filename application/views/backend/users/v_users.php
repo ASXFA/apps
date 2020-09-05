@@ -144,7 +144,7 @@
                                                                         });
                                                                         setTimeout(function(){
                                                                             window.location.href = url;
-                                                                        },3000);
+                                                                        },1000);
                                                                     }else{
                                                                         swal("Okay :) ");
                                                                     }

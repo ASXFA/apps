@@ -24,6 +24,14 @@ class Users_model extends CI_Model {
                 return $query;
         }
 
+        public function search($nama)
+        {
+                $this->db->like('user_nama', $nama , 'both');
+                $this->db->order_by('user_nama', 'ASC');
+                $this->db->limit(10);
+                return $this->db->get('users')->result();
+        }
+
         public function check_users ()
 	{
                 $this->db->where('user_nip',$this->input->post('l_nip'));
@@ -62,8 +70,10 @@ class Users_model extends CI_Model {
                         'user_role' => $this->input->post('user_role'),
                         'user_nama' => $this->input->post('user_nama'),
                         'user_email' => $this->input->post('user_email'),
+                        'user_pangkat' => $this->input->post('user_pangkat'),
                         'user_jabatan' => $this->input->post('user_jabatan'),
                         'user_unit_organisasi' => $this->input->post('user_unit_organisasi'),
+                        'user_unit_kerja' => $this->input->post('user_unit_kerja'),
                         'user_organisasi' => $this->input->post('user_organisasi'),
                         'user_kota' => $this->input->post('user_kota'),
                         'user_provinsi' => $this->input->post('user_provinsi'),
@@ -91,8 +101,10 @@ class Users_model extends CI_Model {
                         'user_role' => $this->input->post('user_role'),
                         'user_nama' => $this->input->post('user_nama'),
                         'user_email' => $this->input->post('user_email'),
+                        'user_pangkat' => $this->input->post('user_pangkat'),
                         'user_jabatan' => $this->input->post('user_jabatan'),
                         'user_unit_organisasi' => $this->input->post('user_unit_organisasi'),
+                        'user_unit_kerja' => $this->input->post('user_unit_kerja'),
                         'user_organisasi' => $this->input->post('user_organisasi'),
                         'user_kota' => $this->input->post('user_kota'),
                         'user_provinsi' => $this->input->post('user_provinsi'),
