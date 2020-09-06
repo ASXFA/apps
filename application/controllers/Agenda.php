@@ -8,11 +8,13 @@ class Agenda extends CI_Controller {
 		if($this->session->userdata('is_login')!=1){
 			redirect('login');
 		}
+		$this->load->model('request_model');
     }
     
 	public function index()
 	{
 		$data['title'] = 'agenda';
+		$data['reqNotification'] = $this->request_model->getByUserStatusNol();
         $this->load->view('backend/include/head');
 		$this->load->view('backend/include/header_mobile');
 		$this->load->view('backend/include/sider',$data);

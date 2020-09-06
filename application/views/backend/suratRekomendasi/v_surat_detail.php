@@ -28,8 +28,12 @@
                                         Action
                                     </button>
                                     <div class="dropdown-menu">
+                                        <?php if(empty($req) || $req->num_rows() == 0){ ?>
                                         <a class="dropdown-item" id="requestSignature" href="#">Request Signature</a>
-                                        <a class="dropdown-item" href="#">Download</a>
+                                        <?php }else{?>
+                                        <a class="dropdown-item" style="opacity:0.5;" >Request Signature</a>
+                                        <?php } ?>
+                                        <a class="dropdown-item" href="<?= base_url('Surat_rekomendasi_SE/download/tipe'.$se->se_tipe.'/'.$se->se_filename) ?>">Download</a>
                                     </div>
                                 </div>
                                 <?php 
@@ -62,7 +66,7 @@
                             </div>
                             <div class="card-body" id="requestForm">
                                 <h3>Form Request</h3>
-                                <form class="mt-3" id="formRequest">
+                                <!-- <form class="mt-3" id="formRequest"> -->
                                     <div class="form-group">
                                         <label for="pemaraf" class="form-control-label">Pilih Pemaraf</label>
                                         <select name="pemaraf" id="pemaraf" class="form-control">
@@ -70,7 +74,7 @@
                                                 <option value="<?= $user->user_id ?>"><?= $user->user_nama.' - '.$user->user_nik ?></option>
                                             <?php endforeach ?>
                                         </select>
-                                        <input type="text" namee="id_surat" value="<?= $se->se_id ?>" hidden>
+                                        <input type="text" id="id_surat" name="id_surat" value="<?= $se->se_id ?>" hidden>
                                     </div>
                                     <div class="form-group">
                                         <label for="message" class="form-control-label">Message</label>
@@ -79,31 +83,20 @@
                                     <div class="form-group">
                                         <button id="btn-pemaraf" class="btn btn-info float-right">Next</button>
                                     </div>
-                                </form>
+                                <!-- </form> -->
                             </div>
                             <div class="card-body" id="requestSpecimen">
                                 <div class="row">
                                     <div class="col-lg-4">
                                         <form id="specimenRequest">
-                                            <div class="card specimen">
-                                                <div class="card-body specimen">
-                                                    <div>
-                                                        <h2 class="text-center">Specimen</h2>
-                                                        <h5 class="text-center display-6">Please Choose One</h5>
-                                                        <hr>
-                                                        <input type="text" name="id_request" id="id_request" hidden>
-                                                        <label>
-                                                            <input type="radio" class="option-input radio" id="specimen1" name="specimen" value="1" />
-                                                            Image
-                                                        </label>
-                                                        <br>
-                                                        <label>
-                                                            <input type="radio" class="option-input radio" id="specimen2" name="specimen" value="2" />
-                                                            Invisible
-                                                        </label>
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div id="specimen">
+
                                                     </div>
                                                 </div>
                                             </div>
+                                        </form>
                                     </div>
                                     <div class="col-lg-8">
                                         <div class="container-canvas">
@@ -111,12 +104,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button id="btn-specimen" class="btn btn-info float-right">Next</button>
-                                </form>
+                                <button id="btn-specimen" class="btn btn-info mt-5   float-right">Next</button>
                             </div>
                             <div class="card-body" id="sendRequest">
-                                <img src="<?= base_url('assets/backend/images/New app.svg') ?>" alt="" class="mx-auto d-block">
-                                <a href="<?= base_url('request/send') ?>" class="btn btn-info float-right mt-5">Send <i class="fa fa-send ml-1"></i></a>
+                                <img src="<?= base_url('assets/backend/images/New app.svg') ?>" alt="SEND" width="70%" class="mx-auto d-block">
+                                <a href="<?= base_url('request/send/'.$se->se_id.'/1') ?>" class="btn btn-info float-right mt-5">Send <i class="fa fa-send ml-1"></i></a>
                             </div>
                         </div>
                     </div>
@@ -223,11 +215,13 @@
         //         $('[name="user_id"]').val(ui.item.user_id); 
         //     }
         // });
-
+        
+        // insert pemaraf
         $('#btn-pemaraf').click(function(){
             var pemaraf = $("#pemaraf").val();
             var message = $("textarea[name='message']").val();
             var id_surat = $("input[name='id_surat']").val();
+
             $.ajax({
                 type:'POST',
                 url:'<?= base_url('request/add') ?>',
@@ -240,7 +234,16 @@
                     $('#sendRequest').hide();
                     $('#prgs-bar').css({"width": "70%"});
                     $('#prgs-bar').html('Phase 2');
-                    $('#id_request').value=data[0].request_id;
+                    var html ='';
+                    var i;
+                    for(i=0; i<data.length; i++){
+                        html += "<input id='id_request' value='"+data[i].req_id+"' hidden>";
+                        html += "<h2 class='text-center'>Specimen</h2>" + 
+                        "<h5 class='text-center display-6'>Please Choose One</h5><hr>"+
+                        "<label><input type='radio' class='option-input radio' id='specimen1' name='specimen' value='1' />Image</label><br>"+
+                        "<label><input type='radio' class='option-input radio' id='specimen2' name='specimen' value='2' />Invisible</label>";
+                    }
+                    $('#specimen').html(html);
                     var url = '<?= base_url('assets/backend/surat/tipe'.$se->se_tipe.'/'.$filenameEncrypt) ?>';
                     pdfjsLib.getDocument(url).then(doc => {
                         doc.getPage(1).then(page=>{
@@ -258,11 +261,12 @@
                         });
                     });
                 }
-            })
+            });
         });
-
+        
+        //insert specimen
         $('#btn-specimen').click(function(){
-            var specimen = $('input#specimen1:checked').val() ? 1 : 2;
+            var specimen = $('input[name=specimen]:checked').val();
             var id_request = $('#id_request').val();
 
             $.ajax({

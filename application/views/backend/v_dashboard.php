@@ -39,7 +39,7 @@
                                         <i class="zmdi zmdi-account-o"></i>
                                     </div>
                                     <div class="text">
-                                        <h2>58</h2>
+                                        <h2><?= $users ?></h2>
                                         <span>User Terdaftar</span>
                                     </div>
                                 </div>
@@ -57,8 +57,8 @@
                                         <i class="zmdi zmdi-file-text"></i>
                                     </div>
                                     <div class="text">
-                                        <h2>15</h2>
-                                        <span>Dokumen Tersedia</span>
+                                        <h2><?= $tte ?></h2>
+                                        <span>TTE</span>
                                     </div>
                                 </div>
                                 <div class="overview-chart">
@@ -90,11 +90,11 @@
                             <div class="overview__inner">
                                 <div class="overview-box clearfix">
                                     <div class="icon">
-                                        <i class="zmdi zmdi-money"></i>
+                                        <i class="zmdi zmdi-file"></i>
                                     </div>
                                     <div class="text">
-                                        <h2>3</h2>
-                                        <span>Surat perlu TTE</span>
+                                        <h2><?= $req ?></h2>
+                                        <span>Dokumen Request</span>
                                     </div>
                                 </div>
                                 <div class="overview-chart">

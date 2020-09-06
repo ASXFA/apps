@@ -10,6 +10,7 @@ class Users extends CI_Controller {
 		}
 
 		$this->load->model('users_model');
+		$this->load->model('request_model');
 		$this->load->library('form_validation');
 		$this->load->library('encrypt');
     }
@@ -18,6 +19,7 @@ class Users extends CI_Controller {
 	{
 		$data['title'] = 'Admin Panel - users';
 		$data['users'] = $this->users_model->getAll()->result();
+		$data['reqNotification'] = $this->request_model->getByUserStatusNol();
         $this->load->view('backend/include/head',$data);
 		$this->load->view('backend/include/header_mobile');
 		$this->load->view('backend/include/sider');
@@ -28,6 +30,7 @@ class Users extends CI_Controller {
 	public function add()
 	{
 		$data['title'] = 'Admin Panel - users';
+		$data['reqNotification'] = $this->request_model->getByUserStatusNol();
         $this->load->view('backend/include/head',$data);
 		$this->load->view('backend/include/header_mobile');
 		$this->load->view('backend/include/sider');
@@ -78,6 +81,7 @@ class Users extends CI_Controller {
 			}
 		}else{
 			$data['title'] = 'Admin Panel - users';
+			$data['reqNotification'] = $this->request_model->getByUserStatusNol();
 			$this->load->view('backend/include/head',$data);
 			$this->load->view('backend/include/header_mobile');
 			$this->load->view('backend/include/sider');
@@ -94,6 +98,7 @@ class Users extends CI_Controller {
 		$decrypt_id = $this->encrypt->decode($id_convert);
 		$data['user'] = $this->users_model->getById($decrypt_id)->row();
 		$data['title'] = 'Admin Panel - users';
+		$data['reqNotification'] = $this->request_model->getByUserStatusNol();
 		$this->load->view('backend/include/head',$data);
 		$this->load->view('backend/include/header_mobile');
 		$this->load->view('backend/include/sider');
@@ -135,6 +140,7 @@ class Users extends CI_Controller {
 		}else{
 			$data['user'] = $this->users_model->getById($decrypt_id)->row();
 			$data['title'] = 'Admin Panel - users';
+			$data['reqNotification'] = $this->request_model->getByUserStatusNol();
 			$this->load->view('backend/include/head',$data);
 			$this->load->view('backend/include/header_mobile');
 			$this->load->view('backend/include/sider');
@@ -162,6 +168,7 @@ class Users extends CI_Controller {
 	{
 		$data['datas'] = $this->users_model->getByDeleted()->result();
 		$data['title'] = 'Admin Panel - users';
+		$data['reqNotification'] = $this->request_model->getByUserStatusNol();
         $this->load->view('backend/include/head',$data);
 		$this->load->view('backend/include/header_mobile');
 		$this->load->view('backend/include/sider',$data);
@@ -218,6 +225,7 @@ class Users extends CI_Controller {
 	public function profil()
 	{
 		$data['title'] = 'profil';
+		$data['reqNotification'] = $this->request_model->getByUserStatusNol();
         $this->load->view('backend/include/head',$data);
 		$this->load->view('backend/include/header_mobile');
 		$this->load->view('backend/include/sider');

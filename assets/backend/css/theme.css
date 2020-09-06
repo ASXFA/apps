@@ -14844,3 +14844,27 @@ select.form-control.form-control-sm.filter{
   .option-input.radio::after {
     border-radius: 50%;
   }
+
+  .card.accord{
+      margin: 0;
+      border-radius: 7px;
+      border: 0px;
+  }
+
+  .card.accord .card-header{
+      background: white;
+      border: 0;
+      padding: 4px 0px 4px 0px;
+  }
+
+  .card.accord button.btn.btn-link{
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 18px;
+      color: #777;
+  }
+
+  .card.accord .card-body{
+      margin-left: 25px;
+  }
+  

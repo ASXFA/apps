@@ -15,12 +15,13 @@ class Surat_rekomendasi_SE extends CI_Controller {
     
 	public function index()
 	{
-		$this->load->model('se_model');
+		$this->load->model('request_model');
 		$this->load->model('users_model');
 		$data['title'] = 'Admin Panel - surat rekomendasi';
 		// $data['users'] = $this->users_model->getAll()->result();
 		$data['se'] = $this->se_model->getByUserId()->result();
 		$data['usersModal'] = $this->users_model->getAll()->result();
+		$data['reqNotification'] = $this->request_model->getByUserStatusNol();
 		$this->load->view('backend/include/head',$data);
 		$this->load->view('backend/include/header_mobile');
 		$this->load->view('backend/include/sider');
@@ -73,6 +74,7 @@ class Surat_rekomendasi_SE extends CI_Controller {
 	public function detail($id)
 	{
 		$this->load->model('se_model');
+		$this->load->model('request_model');
 		$this->load->model('users_model');
 		$data['title'] = 'Admin Panel - surat rekomendasi';
 		$id_convert = str_replace(array('-','_','~'),array('=','+','/'),$id.'');
@@ -80,6 +82,8 @@ class Surat_rekomendasi_SE extends CI_Controller {
 		$decrypt_id = $this->encrypt->decode($id_convert);
 		// $data['users'] = $this->users_model->getAll()->result();
 		$data['se'] = $this->se_model->getById($decrypt_id)->row();
+		$data['reqNotification'] = $this->request_model->getByUserStatusNol();
+		$data['req'] = $this->request_model->getAllByReqUserStatusNol($decrypt_id);
 		$data['users'] = $this->users_model->getAll()->result();
 		$this->load->view('backend/include/head',$data);
 		$this->load->view('backend/include/header_mobile');
@@ -95,11 +99,37 @@ class Surat_rekomendasi_SE extends CI_Controller {
 		$data = $this->se_model->delete($decrypt_id);
 		if($data == TRUE){
 			$this->session->set_flashdata('cond','1');
-			$this->session->set_flashdata('se_check','Successfuly Delete SE !');
+			$this->session->set_flashdata('SE_check','Successfuly Delete SE !');
 			redirect('Surat_rekomendasi_SE');
 		}else{
 			$this->session->set_flashdata('cond','0');
-			$this->session->set_flashdata('se_check','Failed Delete SE !');
+			$this->session->set_flashdata('SE_check','Failed Delete SE !');
+			redirect('Surat_rekomendasi_SE');
+		}
+	}
+
+	public function download($tipe,$filename)
+	{
+		$filenameDecrypt = $this->encrypt->decode($filename);
+		$file ='assets/backend/surat/'.$tipe.'/'.$filenameDecrypt;
+
+		if (file_exists($file)) {
+			header('Content-Description: File Transfer');
+            header('Content-Type: application/octet-stream');
+            header('Content-Disposition: attachment; filename='.basename($file));
+            header('Content-Transfer-Encoding: binary');
+            header('Expires: 0');
+            header('Cache-Control: private');
+            header('Pragma: private');
+            header('Content-Length: ' . filesize($file));
+            ob_clean();
+            flush();
+            readfile($file);
+            
+            exit;
+		}else{
+			$this->session->set_flashdata('cond','0');
+			$this->session->set_flashdata('SE_check','File does not exist !');
 			redirect('Surat_rekomendasi_SE');
 		}
 	}

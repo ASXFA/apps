@@ -34,6 +34,14 @@ class Se_model extends CI_Model {
         }
     }
 
+    public function editStatusSE($id,$status)
+    {
+        $data = array ('se_status'=>$status);
+        $this->db->where('se_id',$id);
+        $query = $this->db->update('se',$data);
+        return $query;
+    }
+
     public function delete($id){
         $this->db->where('se_id',$id);
         $query = $this->db->delete('se');

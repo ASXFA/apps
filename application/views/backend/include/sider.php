@@ -28,6 +28,10 @@
                             </li>
                         </ul>
                 </li>
+                <li id="request" class="menu">
+                    <a href="<?= base_url('request') ?>">
+                        <i class="fas fa-inbox"></i>Penandatanganan</a>
+                </li>
                 <li id="agenda" class="menu">
                     <a href="<?= base_url('agenda') ?>">
                         <i class="fas fa-calendar-alt"></i>Agenda Penjadwalan</a>

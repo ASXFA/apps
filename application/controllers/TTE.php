@@ -10,6 +10,7 @@ class TTE extends CI_Controller {
 		}
 		$this->load->library('encrypt');
 		$this->load->model('TTE_model');
+		$this->load->model('request_model');
     }
     
 	public function index()
@@ -18,6 +19,7 @@ class TTE extends CI_Controller {
 		$data['tte'] = $this->TTE_model->getAll()->result();
 		$data['tteModal'] = $this->TTE_model->getAll()->result();
 		$data['countTte'] = $this->TTE_model->countTte();
+		$data['reqNotification'] = $this->request_model->getByUserStatusNol();
 		$this->load->view('backend/include/head');
 		$this->load->view('backend/include/header_mobile');
 		$this->load->view('backend/include/sider',$data);
